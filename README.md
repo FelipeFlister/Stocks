@@ -81,15 +81,34 @@ O **Stocks** é um sistema web responsivo desenvolvido na plataforma Base44 que 
 
 ## 🗂️ Estrutura do Projeto
 
-
-/projeto
-│
-├── backend
-├── frontend
-├── database
-├── docs
-├── README.md
-
+```text
+Stocks/
+├── base44/              # Configurações e entidades do banco de dados (Base44)
+│   ├── entities/
+│   └── config.jsonc
+├── src/                 # Código-fonte principal da aplicação
+│   ├── api/             # Integração e chamadas com a API em nuvem
+│   ├── components/      # Componentes visuais reutilizáveis e de interface
+│   │   ├── dashboard/   # Componentes de gráficos, métricas e visão geral
+│   │   ├── landing/     # Seções da página inicial
+│   │   ├── layout/      # Estrutura de menus, barra lateral e cabeçalho
+│   │   ├── products/    # Modais, tabelas e formulários de produtos
+│   │   ├── settings/    # Componentes de configurações do sistema
+│   │   ├── shared/      # Componentes compartilhados entre várias telas
+│   │   ├── suppliers/   # Gestão e cadastro de fornecedores
+│   │   └── ui/          # Elementos base de interface (botões, inputs, cards)
+│   ├── hooks/           # Hooks customizados do React
+│   ├── lib/             # Configurações de bibliotecas auxiliares
+│   ├── pages/           # Páginas e telas principais do sistema
+│   ├── utils/           # Funções utilitárias
+│   ├── App.jsx          # Componente raiz e gerenciamento de rotas
+│   ├── index.css        # Estilos globais e configuração do Tailwind CSS
+│   └── main.jsx         # Ponto de entrada da aplicação React
+├── .env.local           # Variáveis de ambiente locais (não versionado)
+├── index.html           # Template HTML principal
+├── package.json         # Dependências e scripts do projeto
+└── vite.config.js       # Configuração do bundler ViteD
+```
 
 ---
 
@@ -149,8 +168,38 @@ Administrador / Operador: Acesso completo para gerenciar o estoque, incluir e ed
 
 ## 📦 Como Executar o Projeto
 
-Passo a passo para rodar o sistema.
+O sistema **Stocks** pode ser acessado diretamente online pela nuvem ou executado localmente seguindo os passos abaixo:
 
-Exemplo:
+### Opção 1: Acesso Online (Recomendado para testes rápidos)
+1. Acesse o link oficial da aplicação hospedada: [`https://stocks-1.base44.app`](https://stocks-1.base44.app)
+2. Faça login com suas credenciais de usuário.
 
-1. Clonar o repositório
+### Opção 2: Execução Local (Desenvolvimento)
+Se preferir rodar o código-fonte na sua máquina localmente, siga os passos abaixo:
+
+1. **Clonar o repositório:**
+   ```bash
+   git clone https://github.com/FelipeFlister/Stocks.git
+   ```
+
+2. **Navegar até a pasta do projeto:**
+    ```bash
+    cd Stocks
+    ```
+
+3. **Instalar as dependências:**
+    ```bash
+    npm install
+    ```
+
+4. **Crie um arquivo ```.env.local``` na raiz do projeto e configure as credenciais da API do Base44:**
+    ```.env.local
+    VITE_BASE44_APP_ID=cbef744a8545c389ef439ea6
+    VITE_BASE44_APP_BASE_URL=https://stocks-1.base44.app/
+    ```
+
+5. **Iniciar o servidor de desenvolvimento**
+    ```bash
+    npm run dev
+    ```
+    (Para encerrar a execução no terminal, pressione Ctrl + C).
