@@ -1,0 +1,109 @@
+{
+  "name": "Product",
+  "type": "object",
+  "properties": {
+    "name": {
+      "type": "string",
+      "description": "Nome do produto"
+    },
+    "sku": {
+      "type": "string",
+      "description": "C\u00f3digo/SKU do produto"
+    },
+    "category_id": {
+      "type": "string",
+      "description": "ID da categoria"
+    },
+    "cost_price": {
+      "type": "number",
+      "description": "Pre\u00e7o de custo unit\u00e1rio"
+    },
+    "sell_price": {
+      "type": "number",
+      "description": "Pre\u00e7o de venda unit\u00e1rio"
+    },
+    "quantity": {
+      "type": "number",
+      "default": 0,
+      "description": "Quantidade atual em estoque"
+    },
+    "min_quantity": {
+      "type": "number",
+      "default": 5,
+      "description": "Quantidade m\u00ednima de seguran\u00e7a"
+    },
+    "expiration_date": {
+      "type": "string",
+      "format": "date",
+      "description": "Data de validade do lote atual"
+    },
+    "unit": {
+      "type": "string",
+      "enum": [
+        "unidade",
+        "kg",
+        "litro",
+        "metro",
+        "caixa",
+        "pacote"
+      ],
+      "default": "unidade",
+      "description": "Unidade de medida"
+    },
+    "last_movement_date": {
+      "type": "string",
+      "format": "date-time",
+      "description": "Data da \u00faltima movimenta\u00e7\u00e3o"
+    },
+    "image_url": {
+      "type": "string",
+      "description": "URL da imagem do produto"
+    }
+  },
+  "required": [
+    "name",
+    "cost_price",
+    "sell_price"
+  ],
+  "rls": {
+    "create": {
+      "created_by_id": "{{user.id}}"
+    },
+    "read": {
+      "$or": [
+        {
+          "created_by_id": "{{user.id}}"
+        },
+        {
+          "user_condition": {
+            "role": "admin"
+          }
+        }
+      ]
+    },
+    "update": {
+      "$or": [
+        {
+          "created_by_id": "{{user.id}}"
+        },
+        {
+          "user_condition": {
+            "role": "admin"
+          }
+        }
+      ]
+    },
+    "delete": {
+      "$or": [
+        {
+          "created_by_id": "{{user.id}}"
+        },
+        {
+          "user_condition": {
+            "role": "admin"
+          }
+        }
+      ]
+    }
+  }
+}
