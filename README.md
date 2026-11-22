@@ -18,19 +18,11 @@
 
 ## 🎯 Objetivo do Projeto
 
-Descrever o objetivo principal do software.
-
-Exemplo:
-
 Desenvolver um sistema web para simplificar e centralizar a gestão de estoque de micro e pequenas empresas, oferecendo recursos para cadastro e gerenciamento de produtos, controle de entradas e saídas, gerenciamento de fornecedores, acompanhamento de validade e monitoramento dos níveis de estoque. O objetivo é reduzir erros operacionais, evitar perdas de mercadorias e facilitar a tomada de decisões por meio de informações organizadas e acessíveis.
 
 ---
 
 ## 👥 Público-Alvo
-
-Quem utilizará o sistema?
-
-Exemplo:
 
 - Microempreendedores Individuais (MEIs).
 - Proprietários e gerentes de micro e pequenas empresas.
@@ -50,10 +42,6 @@ Além disso, a ausência de informações centralizadas dificulta o acompanhamen
 
 ## 💡 Solução Proposta
 
-Descrever a solução que será desenvolvida.
-
-Exemplo:
-
 O **Stocks** é um sistema web responsivo de gestão de estoque, desenvolvido por meio da plataforma Base44, que centraliza as principais operações de controle de mercadorias em uma única interface.
 
 A solução oferece recursos para gerenciamento de produtos, categorias e fornecedores, registro de entradas e saídas, monitoramento dos níveis de estoque, alertas de vencimento e identificação de produtos com baixa ou nenhuma movimentação. Também disponibiliza dashboard com indicadores, relatórios financeiros e ferramentas de configuração e gerenciamento de dados.
@@ -63,10 +51,6 @@ O sistema busca proporcionar uma experiência simples e intuitiva, permitindo qu
 ---
 
 ## ⚙️ Funcionalidades do Sistema
-
-### Funcionalidades Principais
-
-### Funcionalidades Principais
 
 - [x] Autenticação e login de usuários.
 - [x] Dashboard com indicadores e visão geral do estoque.
@@ -84,7 +68,7 @@ O sistema busca proporcionar uma experiência simples e intuitiva, permitindo qu
 - [x] Configurações e gerenciamento de dados.
 - [x] Backup e importação de dados.
 - [x] Canal de suporte.
-- [x] Histórico de versões e atualizações.
+- [x] Consulta ao histórico de versões e atualizações do sistema.
 
 ---
 
@@ -109,6 +93,8 @@ Stocks/
 ├── base44/              # Configurações e entidades do banco de dados (Base44)
 │   ├── entities/
 │   └── config.jsonc
+├── docs/
+│   └── images/          # Capturas de tela utilizadas no README
 ├── src/                 # Código-fonte principal da aplicação
 │   ├── api/             # Integração e chamadas com a API em nuvem
 │   ├── components/      # Componentes visuais reutilizáveis e de interface
@@ -158,6 +144,8 @@ Stocks/
 - RF19 – O sistema deve disponibilizar um canal de suporte aos usuários.
 - RF20 – O sistema deve apresentar o histórico de versões e atualizações do sistema.
 - RF21 – O sistema deve permitir a autenticação de usuários por meio de credenciais de acesso.
+- RF22 – O sistema deve permitir que cada usuário gerencie seus próprios dados de estoque de forma independente.
+- RF23 – O sistema deve restringir a visualização e o gerenciamento de produtos, categorias, fornecedores e movimentações aos respectivos usuários proprietários dos dados.
 
 ---
 
@@ -171,43 +159,74 @@ Stocks/
 - RNF06 – As operações de consulta, cadastro e gerenciamento devem apresentar desempenho adequado, evitando atrasos que prejudiquem a utilização do sistema.
 - RNF07 – O sistema deve manter uma organização visual consistente entre suas páginas, componentes e funcionalidades.
 - RNF08 – O sistema deve utilizar mecanismos de armazenamento e comunicação disponibilizados pela plataforma Base44 para gerenciamento dos dados.
+- RNF09 – O sistema deve garantir o isolamento dos dados entre diferentes contas, impedindo que usuários não autorizados acessem informações pertencentes a outras contas (Multi-tenancy).
+- RNF10 – O sistema deve implementar mecanismos de autenticação e controle de acesso para proteger as informações armazenadas.
 
 ---
 
 ## 📅 Cronograma do Projeto
 
-| Etapa | Descrição | Responsável | Data |
-|------|-----------|-------------|------|
-| 1 | Levantamento de requisitos | Equipe | |
-| 2 | Modelagem do sistema | Equipe | |
-| 3 | Desenvolvimento | Equipe | |
-| 4 | Testes | Equipe | |
-| 5 | Entrega | Equipe | |
+| Etapa | Descrição | Responsável | Prazo |
+|---|---|---|---|
+| 1 | Planejamento, pesquisa de necessidades e coleta de feedback dos MEIs. | Equipe e Maycon | Março a Novembro/2026 |
+| 2 | Planejamento da interface, prototipação e desenvolvimento das funcionalidades do sistema. | Felipe | Maio a Setembro/2026 |
+| 3 | Testes, correções e melhorias do sistema. | Felipe | Junho a Novembro/2026 |
+| 4 | Elaboração do manual, documentos, slides e materiais de divulgação. | Guilherme, Giovanna e André | Setembro a Novembro/2026 |
+| 5 | Preparação e realização da apresentação e demonstração do projeto. | Davi, Cauã e equipe | Setembro a Novembro/2026 |
 
 ---
 
 ## 🧑‍💻 Integrantes da Equipe
 
-| Nome | Função | Responsabilidade |
-|------|-------|-----------------|
-| | Desenvolvedor | |
-| | Designer | |
-| | Testador | |
-| | Documentação | |
+| Integrante | Turma | Função | Responsabilidade |
+|---|---|---|---|
+| André R. | 2°A| Apresentação Visual | Elaboração e organização dos slides para apresentação à banca examinadora. |
+| Cauã A. | 1°B| Comunicação e Apresentação | Organização das falas dos integrantes e comunicação com o público durante a apresentação no stand. |
+| Davi L. | 2°B| Apresentação e Pitch | Preparação e apresentação do projeto, pitch e MVP para a banca examinadora. |
+| Felipe F. | 3°B| Líder e Desenvolvedor | Liderança da equipe, desenvolvimento do sistema e implementação das funcionalidades do Stocks. |
+| Giovanna C. | 3°A| Documentação e Organização | Elaboração dos documentos institucionais, produção do banner, decoração e organização do stand para apresentação ao público. |
+| Guilherme S.| 2°A| Documentação Técnica | Desenvolvimento do manual de utilização do sistema e auxílio na elaboração dos slides. |
+| Maycon R. | 1°A| Pesquisa e Feedback | Realização de pesquisas de opiniões e coleta de feedbacks dos MEIs para avaliação da solução. |
 
 ---
 
-## 🔐 Controle de Acesso (se aplicável)
+## 🔐 Controle de Acesso
 
-Administrador / Operador: Acesso completo para gerenciar o estoque, incluir e editar produtos, categorias e fornecedores.
+O sistema utiliza autenticação de usuários e isolamento de dados entre contas. Cada usuário possui acesso aos próprios produtos, categorias, fornecedores e movimentações de estoque.
 
 ---
 
 ## 📷 Protótipos / Telas
 
+### Dashboard
+Visão geral do estoque e principais indicadores do sistema.
+
+![Dashboard do Stocks](docs/images/dashboard.png)
+
+### Gestão de Produtos
+Cadastro, consulta e gerenciamento dos produtos.
+
+![Gestão de produtos](docs/images/produtos.png)
+
+### Movimentações de Estoque
+Registro e acompanhamento das entradas e saídas de mercadorias.
+
+![Movimentações de estoque](docs/images/movimentacoes.png)
+
+### Central de Alertas
+Monitoramento de produtos com estoque baixo, esgotados ou próximos do vencimento.
+
+![Central de alertas](docs/images/alertas.png)
+
+### Relatórios Financeiros
+Visualização de informações financeiras relacionadas ao estoque.
+
+![Relatórios financeiros](docs/images/relatorios.png)
+
+---
+### Links do Projeto
 - **Protótipo no Figma:** [Visualizar protótipo](https://www.figma.com/design/JsUyvapkZCJcsi412fUfTX/Mvp-Stocks?node-id=0-1&t=HnmNqLl9tTEYONYZ-1)
 - **Sistema Online:** [Acessar Stocks](https://stocks-1.base44.app)
-
 ---
 
 ## 📦 Como Executar o Projeto
@@ -244,7 +263,7 @@ Se preferir rodar o código-fonte na sua máquina localmente, siga os passos aba
     VITE_BASE44_APP_BASE_URL=https://stocks-1.base44.app/
     ```
 
-6. **Iniciar o servidor de desenvolvimento**
+5. **Iniciar o servidor de desenvolvimento**
     ```bash
     npm run dev
     ```
