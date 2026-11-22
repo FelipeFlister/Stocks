@@ -6,13 +6,13 @@
 
 ## 📌 Informações Gerais
 
-- **Nome do Projeto:** Stocks - A sua nova gestão de estoque
+- **Nome do Projeto:** Stocks - Sistema de Gestão de Estoque
 - **Equipe:** Tech4Future
 - **Curso:** Técnico em Informática
 - **Instituição:** FUNEC Riacho
 - **Ano/Semestre:** 2026 / 2º Semestre
 - **Professor Orientador:** Wilian Douglas Teixeira
-- **Cliente/Setor Solicitante:** Microempresários e Pequenos Comércios Locais
+- **Cliente/Setor Solicitante:** Microempreendedores Individuais (MEIs) e Pequenos Comércios
 
 ---
 
@@ -22,7 +22,7 @@ Descrever o objetivo principal do software.
 
 Exemplo:
 
-Desenvolver um sistema web para simplificar o controle de entrada e saída de mercadorias, cadastro de fornecedores e alertas de validade de produtos, permitindo que microempresas otimizem sua gestão de estoque sem a necessidade de planilhas complexas ou processos manuais.
+Desenvolver um sistema web para simplificar e centralizar a gestão de estoque de micro e pequenas empresas, oferecendo recursos para cadastro e gerenciamento de produtos, controle de entradas e saídas, gerenciamento de fornecedores, acompanhamento de validade e monitoramento dos níveis de estoque. O objetivo é reduzir erros operacionais, evitar perdas de mercadorias e facilitar a tomada de decisões por meio de informações organizadas e acessíveis.
 
 ---
 
@@ -32,15 +32,19 @@ Quem utilizará o sistema?
 
 Exemplo:
 
-- Microempreendedores Individuais (MEI)
-- Gerentes e funcionários de pequenos comércios
-- Operadores e responsáveis pelo controle de estoque
+- Microempreendedores Individuais (MEIs).
+- Proprietários e gerentes de micro e pequenas empresas.
+- Funcionários responsáveis pela administração de mercadorias.
+- Operadores e responsáveis pelo controle de estoque.
+- Pequenos estabelecimentos comerciais que necessitam de uma gestão de estoque eficiente.
 
 ---
 
 ## 🧩 Problema a Ser Resolvido
 
-Atualmente, muitas microempresas realizam o controle de estoque manualmente ou através de planilhas de difícil manutenção. Isso gera falhas operacionais como perda de produtos por vencimento, falta de reposição em tempo hábil e divergências na contagem dos itens armazenados.
+Muitas micro e pequenas empresas ainda realizam o controle de estoque manualmente ou por meio de planilhas, dificultando o acompanhamento das mercadorias e a organização das informações. Essa prática pode ocasionar divergências nas quantidades registradas, falta de produtos, compras desnecessárias, perdas por vencimento e dificuldades para identificar mercadorias com pouca ou nenhuma movimentação.
+
+Além disso, a ausência de informações centralizadas dificulta o acompanhamento financeiro e a tomada de decisões, comprometendo a eficiência da gestão e o crescimento do negócio.
 
 ---
 
@@ -50,7 +54,11 @@ Descrever a solução que será desenvolvida.
 
 Exemplo:
 
-O **Stocks** é um sistema web responsivo desenvolvido na plataforma Base44 que centraliza a gestão de produtos, categorização, dados de fornecedores e controle de prazos de validade em uma única interface acessível e intuitiva.
+O **Stocks** é um sistema web responsivo de gestão de estoque, desenvolvido por meio da plataforma Base44, que centraliza as principais operações de controle de mercadorias em uma única interface.
+
+A solução oferece recursos para gerenciamento de produtos, categorias e fornecedores, registro de entradas e saídas, monitoramento dos níveis de estoque, alertas de vencimento e identificação de produtos com baixa ou nenhuma movimentação. Também disponibiliza dashboard com indicadores, relatórios financeiros e ferramentas de configuração e gerenciamento de dados.
+
+O sistema busca proporcionar uma experiência simples e intuitiva, permitindo que microempreendedores e pequenos comerciantes tenham maior controle sobre suas operações, reduzam perdas e tomem decisões com base em informações organizadas.
 
 ---
 
@@ -58,24 +66,39 @@ O **Stocks** é um sistema web responsivo desenvolvido na plataforma Base44 que 
 
 ### Funcionalidades Principais
 
-- [x] Autenticação e Login de Usuários
-- [x] Cadastro, Edição e Exclusão de Produtos
-- [x] Organização por Categorias de Produtos
-- [x] Alertas e Controle de Data de Validade
-- [x] Gestão e Cadastro de Fornecedores
-- [x] Pesquisa e Filtragem Dinâmica de Produtos
-- [x] Visão Geral / Dashboard de Estoque
+### Funcionalidades Principais
+
+- [x] Autenticação e login de usuários.
+- [x] Dashboard com indicadores e visão geral do estoque.
+- [x] Cadastro, edição e exclusão de produtos.
+- [x] Cadastro e gerenciamento de categorias.
+- [x] Cadastro e gerenciamento de fornecedores.
+- [x] Registro e controle de entradas e saídas de estoque.
+- [x] Pesquisa e filtragem de produtos.
+- [x] Central de alertas de estoque.
+- [x] Identificação de produtos com estoque baixo ou esgotado.
+- [x] Alertas de produtos próximos do vencimento.
+- [x] Identificação de produtos sem movimentação.
+- [x] Relatórios financeiros.
+- [x] Manual de utilização do sistema.
+- [x] Configurações e gerenciamento de dados.
+- [x] Backup e importação de dados.
+- [x] Canal de suporte.
+- [x] Histórico de versões e atualizações.
 
 ---
 
 ## 🛠️ Tecnologias Utilizadas
 
-- **Plataforma:** Base44 (Low-Code / PaaS)
-- **Front-end:** React, Tailwind CSS, JavaScript, HTML e CSS
-- **Back-end:** Arquitetura Serverless / API em nuvem integrada (gerenciada pela plataforma Base44)
-- **Comunicação:** Requisições assíncronas via JavaScript (`src/api`)
-- **Banco de Dados:** Banco de dados integrado da plataforma Base44
-- **Versionamento:** Git e GitHub
+- **Plataforma de Desenvolvimento:** Base44 (Low-Code / PaaS).
+- **Front-end:** React, JavaScript, HTML5 e CSS3.
+- **Estilização:** Tailwind CSS.
+- **Build Tool:** Vite.
+- **Back-end:** Serviços e APIs gerenciados pela plataforma Base44.
+- **Comunicação:** Requisições assíncronas por meio da integração com a API do Base44.
+- **Banco de Dados:** Banco de dados integrado à plataforma Base44.
+- **Prototipação:** Figma.
+- **Versionamento:** Git e GitHub.
 
 ---
 
@@ -107,26 +130,47 @@ Stocks/
 ├── .env.local           # Variáveis de ambiente locais (não versionado)
 ├── index.html           # Template HTML principal
 ├── package.json         # Dependências e scripts do projeto
-└── vite.config.js       # Configuração do bundler ViteD
+└── vite.config.js       # Configuração do Vite
 ```
 
 ---
 
 ## 🧪 Requisitos Funcionais
 
-- RF01 – O sistema deve permitir o cadastro, edição e exclusão de produtos.
-- RF02 – O sistema deve permitir associar produtos a categorias específicas sem duplicação.
-- RF03 – O sistema deve emitir alertas para produtos próximos da data de vencimento.
-- RF04 – O sistema deve permitir o cadastro de fornecedores para vinculação com os produtos.
-- RF05 – O sistema deve permitir a busca e filtragem rápida de produtos por nome ou categoria.
+- RF01 – O sistema deve permitir o cadastro, edição, consulta e exclusão de produtos.
+- RF02 – O sistema deve permitir o cadastro, edição, consulta e exclusão de categorias.
+- RF03 – O sistema deve permitir associar produtos às suas respectivas categorias.
+- RF04 – O sistema deve permitir o cadastro, edição, consulta e exclusão de fornecedores.
+- RF05 – O sistema deve permitir associar fornecedores aos produtos.
+- RF06 – O sistema deve permitir registrar entradas de mercadorias no estoque.
+- RF07 – O sistema deve permitir registrar saídas de mercadorias do estoque.
+- RF08 – O sistema deve atualizar automaticamente as quantidades dos produtos após cada movimentação.
+- RF09 – O sistema deve permitir pesquisar e filtrar produtos por nome e categoria.
+- RF10 – O sistema deve apresentar um dashboard com indicadores e informações gerais do estoque.
+- RF11 – O sistema deve identificar produtos com estoque abaixo do limite mínimo estabelecido.
+- RF12 – O sistema deve identificar produtos com estoque esgotado.
+- RF13 – O sistema deve emitir alertas para produtos próximos da data de vencimento.
+- RF14 – O sistema deve identificar produtos que não apresentam movimentações durante determinado período.
+- RF15 – O sistema deve disponibilizar relatórios financeiros relacionados ao estoque.
+- RF16 – O sistema deve disponibilizar um manual de utilização para orientar os usuários.
+- RF17 – O sistema deve permitir o gerenciamento das configurações da aplicação.
+- RF18 – O sistema deve disponibilizar recursos para backup e importação de dados.
+- RF19 – O sistema deve disponibilizar um canal de suporte aos usuários.
+- RF20 – O sistema deve apresentar o histórico de versões e atualizações do sistema.
+- RF21 – O sistema deve permitir a autenticação de usuários por meio de credenciais de acesso.
 
 ---
 
 ## 🚫 Requisitos Não Funcionais
 
-- RNF01 – O sistema deve ser acessível via navegador web em computadores e dispositivos móveis.
-- RNF02 – A interface deve ser simples, limpa e de fácil navegação para usuários leigos.
-- RNF03 – O sistema deve garantir a segurança no acesso por meio de autenticação de usuários.
+- RNF01 – O sistema deve ser acessível por meio de navegadores web, tanto em computadores quanto em dispositivos móveis.
+- RNF02 – A interface deve apresentar navegação simples, intuitiva e consistente, facilitando a utilização por usuários com pouca experiência tecnológica.
+- RNF03 – O sistema deve apresentar layout responsivo, adaptando seus componentes a diferentes resoluções de tela.
+- RNF04 – O acesso às funcionalidades protegidas deve ser realizado mediante autenticação de usuários.
+- RNF05 – O sistema deve preservar a integridade das informações de estoque durante as operações de entrada e saída de mercadorias.
+- RNF06 – As operações de consulta, cadastro e gerenciamento devem apresentar desempenho adequado, evitando atrasos que prejudiquem a utilização do sistema.
+- RNF07 – O sistema deve manter uma organização visual consistente entre suas páginas, componentes e funcionalidades.
+- RNF08 – O sistema deve utilizar mecanismos de armazenamento e comunicação disponibilizados pela plataforma Base44 para gerenciamento dos dados.
 
 ---
 
@@ -161,8 +205,8 @@ Administrador / Operador: Acesso completo para gerenciar o estoque, incluir e ed
 
 ## 📷 Protótipos / Telas
 
-- **Link do Protótipo (Figma):** [`[https://www.figma.com/design/JsUyvapkZCJcsi412fUfTX/Mvp-Stocks?node-id=0-1&t=HnmNqLl9tTEYONYZ-1]`](https://www.figma.com/design/JsUyvapkZCJcsi412fUfTX/Mvp-Stocks?node-id=0-1&t=HnmNqLl9tTEYONYZ-1)
-- **Link do Sistema Online (Base44):** [`https://stocks-1.base44.app`](https://stocks-1.base44.app)
+- **Protótipo no Figma:** [Visualizar protótipo](https://www.figma.com/design/JsUyvapkZCJcsi412fUfTX/Mvp-Stocks?node-id=0-1&t=HnmNqLl9tTEYONYZ-1)
+- **Sistema Online:** [Acessar Stocks](https://stocks-1.base44.app)
 
 ---
 
@@ -192,14 +236,18 @@ Se preferir rodar o código-fonte na sua máquina localmente, siga os passos aba
     npm install
     ```
 
-4. **Crie um arquivo ```.env.local``` na raiz do projeto e configure as credenciais da API do Base44:**
+4. **Configure as variáveis de ambiente:**
+   
+   Crie um arquivo `.env.local` na raiz do projeto:
     ```.env.local
     VITE_BASE44_APP_ID=cbef744a8545c389ef439ea6
     VITE_BASE44_APP_BASE_URL=https://stocks-1.base44.app/
     ```
 
-5. **Iniciar o servidor de desenvolvimento**
+6. **Iniciar o servidor de desenvolvimento**
     ```bash
     npm run dev
     ```
-    (Para encerrar a execução no terminal, pressione Ctrl + C).
+   O Vite disponibilizará um endereço local no terminal para acessar a aplicação.
+
+   Para encerrar o servidor, pressione `Ctrl + C`.
